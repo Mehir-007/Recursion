@@ -8,9 +8,7 @@ bool Palindrome(string s,int l,int h)
     if(l>=h)
         return true;
     if(s[l] != s[h])
-    {
         return false;
-    }
     return Palindrome(s,l+1,h-1);
 
 }
