@@ -7,7 +7,7 @@ Output:
 #include<bits/stdc++.h>
 using namespace std;
 
-int Subseq_k(vector<int> &nums,vector<int> &temp,int k,int idx,int sum)
+int Subseq_k(vector<int> &nums,int k,int idx,int sum)
 {
     if(idx==nums.size())
     {
@@ -18,17 +18,15 @@ int Subseq_k(vector<int> &nums,vector<int> &temp,int k,int idx,int sum)
         }
         else return 0; //condition not satisfied
     }
-    temp.push_back(nums[idx]);
     sum=sum+nums[idx];
-    int left=Subseq_k(nums,temp,k,idx+1,sum);
+    int left=Subseq_k(nums,k,idx+1,sum);
     sum=sum-nums[idx];
-    temp.pop_back();
-    int right=Subseq_k(nums,temp,k,idx+1,sum);
+    int right=Subseq_k(nums,k,idx+1,sum);
     return left+right;
 }
 
 int main(){
     vector<int> nums={1,2,1};
-    vector<int> temp;
-    cout<<Subseq_k(nums,temp,2,0,0);
+    
+    cout<<Subseq_k(nums,2,0,0);
 }
