@@ -1,0 +1,46 @@
+For printing all :
+
+f(....)
+{
+    base case{
+        print
+    }
+    pick       [ds.add()]
+    f(idx+1);
+    not pick   [ds.pop()]
+    f(idx+1);
+
+}
+
+For printing one :
+
+bool f(....)
+{
+    base case{
+        condition satisfies - return true;
+        condition Failed    - return false;
+    }
+    pick
+    if(f(idx+1)==true)      - return true;
+    not pick   
+    if(f(idx+1)==true)      - return true; 
+
+    return false;    
+}
+
+For printing count :
+
+int f(....)
+{
+    base case{
+        condition satisfies - return 1;
+        condition Failed    - return 0;
+    }
+
+    pick
+    int left=f(idx+1)
+    not pick   
+    int right=f(idx+1)
+
+    return left+right;
+}
