@@ -1,9 +1,8 @@
-/*  Subsequence with sum==k 
+/* Subsequence with sum==k 
 Input:
 {1,2,1} k=2
 Output:
 1 1
-2
 */
 #include<bits/stdc++.h>
 using namespace std;
